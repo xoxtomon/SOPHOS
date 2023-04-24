@@ -1,13 +1,13 @@
 CREATE TABLE IF NOT EXISTS cliente (
     id INTEGER PRIMARY KEY NOT NULL ,
     nombre VARCHAR(55),
-    appellido VARCHAR(55),
+    apellido VARCHAR(55),
     telefono VARCHAR(20),
     email VARCHAR(55),
     direccion VARCHAR(55)
 );
 
-CREATE TABLE IF NOT EXISTS juegos (
+CREATE TABLE IF NOT EXISTS juego (
     id INTEGER PRIMARY KEY NOT NULL,
     nombre VARCHAR(55),
     director VARCHAR(55),
@@ -24,12 +24,12 @@ CREATE TABLE IF NOT EXISTS alquiler (
     fecha_alquiler TIMESTAMP,
     fecha_devolucion TIMESTAMP,
     FOREIGN KEY (cliente_id) REFERENCES cliente (id),
-    FOREIGN KEY (juego_id) REFERENCES juegos (id)
+    FOREIGN KEY (juego_id) REFERENCES juego (id)
 );
 
 CREATE TABLE IF NOT EXISTS precio (
     id INTEGER PRIMARY KEY NOT NULL,
     juego_id INTEGER,
     precio NUMERIC(10,2),
-    FOREIGN KEY (juego_id) REFERENCES juegos (id)
+    FOREIGN KEY (juego_id) REFERENCES juego (id)
 );
