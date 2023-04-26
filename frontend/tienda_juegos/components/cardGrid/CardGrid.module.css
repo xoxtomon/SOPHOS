@@ -1,0 +1,8 @@
+.grid {
+    display: 'flex';
+    justify-content: 'center';
+}
+
+.item {
+    padding-bottom: 1rem;
+}
