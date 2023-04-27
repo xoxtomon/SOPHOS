@@ -8,7 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import MyModal from '../modal/myModal';
+import MyModal from '../modal/MyModal';
 
 const actions = [
     { icon: <SearchIcon className={styles.btn} />, name: 'Search' },

@@ -11,6 +11,10 @@ export default function CustomCard(props) {
             Apellido: {props.apellido}
             <br />
             Email: {props.email}
+            <br />
+            Telefono: {props.telefono}
+            <br />
+            Direccion: {props.direccion}
         </Typography>);
     } else if (props.cardType == 1) {
         card = (

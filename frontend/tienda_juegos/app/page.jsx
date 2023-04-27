@@ -8,14 +8,14 @@ import FloatingButton from '@/components/floatingButton/FloatingButton';
 
 export default function Home() {
     const Clients = [
-        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com' },
-        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com' },
-        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com' },
-        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com' },
-        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com' },
-        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com' },
-        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com' },
-        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com' }
+        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com', telefono: '3012345532', direccion: 'direccion fake' },
+        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com', telefono: '3012345532', direccion: 'direccion fake' },
+        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com', telefono: '3012345532', direccion: 'direccion fake' },
+        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com', telefono: '3012345532', direccion: 'direccion fake' },
+        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com', telefono: '3012345532', direccion: 'direccion fake' },
+        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com', telefono: '3012345532', direccion: 'direccion fake' },
+        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com', telefono: '3012345532', direccion: 'direccion fake' },
+        { id: 1, nombre: 'Paul', apellido: 'Martinez', email: 'paul@mail.com', telefono: '3012345532', direccion: 'direccion fake' }
     ];
     const Games = [
         { id: 2, nombre: 'GTA-V', director: 'Leslie', protagonista: 'Trevor Philipps', productor: 'Rockstar', plataforma: 'Multi', fechaLanzamiento: '17-09-2013' },
@@ -42,27 +42,27 @@ export default function Home() {
         { id: 6, cliente_id: 6, juego_id: 6, fecha_alquiler: '2023', fecha_devolucion: 'N/A' },
     ];
 
-    const [gameSelect, setGameSelect] = useState(0);
+    const [tabOption, setTabOption] = useState(0);
     const onChangeTab = (identifier) => {
-        setGameSelect(identifier);
+        setTabOption(identifier);
     }
 
     let cardGrid;
     let floatingButton;
-    if (gameSelect == 0) {
+    if (tabOption == 0) {
         cardGrid = (
             <CardGrid propsArray={Clients} cardType={0} />
         );
         //floatingButton = (<FloatingButton modalType={0}/>);
-    } else if (gameSelect == 1) {
+    } else if (tabOption == 1) {
         cardGrid = (
             <CardGrid propsArray={Games} cardType={1} />
         );
-    } else if (gameSelect == 2) {
+    } else if (tabOption == 2) {
         cardGrid = (
             <CardGrid propsArray={Rents} cardType={2} />
         );
-    } else if (gameSelect == 3) {
+    } else if (tabOption == 3) {
         cardGrid = (
             <CardGrid propsArray={Prices} cardType={3} />
         );
@@ -75,7 +75,7 @@ export default function Home() {
                 <CustomTab callBack={onChangeTab} />
                 <p>This is a basic landing page created with Next.js</p>
                 {cardGrid}
-                <FloatingButton modalType={gameSelect} />
+                <FloatingButton modalType={tabOption} />
             </div>
         </div>
     )

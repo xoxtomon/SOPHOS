@@ -15,7 +15,7 @@ export default function CardGrid(props) {
                 {propsArray.map((item, index) => (
                     <Grid item xs={2} sm={4} md={4} key={index}>
                         {props.cardType == 0 && (
-                            <CustomCard id={item.id} nombre={item.nombre} apellido={item.apellido} email={item.email} cardType={0} />
+                            <CustomCard id={item.id} nombre={item.nombre} apellido={item.apellido} email={item.email} telefono={item.telefono} direccion={item.direccion} cardType={0} />
                         )}
                         {props.cardType == 1 && (
                             <CustomCard id={item.id} nombre={item.nombre} director={item.director} protagonista={item.protagonista} productor={item.productor} plataforma={item.plataforma} fechaLanzamiento={item.fechaLanzamiento} cardType={1} />
