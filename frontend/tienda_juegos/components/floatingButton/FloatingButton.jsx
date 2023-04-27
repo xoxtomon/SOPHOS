@@ -19,8 +19,10 @@ const actions = [
 
 export default function FloatingButton(props) {
     const [showModal, setShowModal] = React.useState(false);
-    const handleClick = () => {
+    const [selectedOption, setSelectedOption] = React.useState(null);
+    const handleClick = (action) => {
         setShowModal(!showModal);
+        setSelectedOption(action);
     }
 
     return (
@@ -36,10 +38,10 @@ export default function FloatingButton(props) {
                                 bgcolor: '#43464D'
                             }
                         }}
-                        onClick={handleClick}
+                        onClick={() => handleClick(action.name)}
                     />
                 ))}
-                {showModal && <MyModal callBack={handleClick} modalType={props.modalType} />}
+                {showModal && <MyModal callBack={handleClick} tabType={props.modalType} optionType={selectedOption} />}
             </SpeedDial>
         </Box>
     );

@@ -18,7 +18,7 @@ const style = {
 
 export default function MyModal(props) {
     const handleClick = () => {
-        props.callBack()
+        props.callBack(null)
     }
 
     return (
@@ -34,7 +34,7 @@ export default function MyModal(props) {
                     Text in a modal
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    this is state: {props.modalType}
+                    this is state: {props.tabType} and option type: {props.optionType}
                 </Typography>
             </Box>
 
