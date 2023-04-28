@@ -87,15 +87,6 @@ export default function Home() {
         fetchClients();
     }, []);
 
-    const rents = [
-        { id: 1, cliente_id: 1, juego_id: 1, fecha_alquiler: '2023', fecha_devolucion: 'N/A' },
-        { id: 2, cliente_id: 2, juego_id: 2, fecha_alquiler: '2023', fecha_devolucion: 'N/A' },
-        { id: 3, cliente_id: 3, juego_id: 3, fecha_alquiler: '2023', fecha_devolucion: 'N/A' },
-        { id: 4, cliente_id: 4, juego_id: 4, fecha_alquiler: '2023', fecha_devolucion: 'N/A' },
-        { id: 5, cliente_id: 5, juego_id: 5, fecha_alquiler: '2023', fecha_devolucion: 'N/A' },
-        { id: 6, cliente_id: 6, juego_id: 6, fecha_alquiler: '2023', fecha_devolucion: 'N/A' },
-    ];
-
     const [tabOption, setTabOption] = useState(0);
     const onChangeTab = (identifier) => {
         setTabOption(identifier);
