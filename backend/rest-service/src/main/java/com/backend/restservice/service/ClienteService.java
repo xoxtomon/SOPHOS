@@ -35,4 +35,11 @@ public class ClienteService {
         return clienteRepository.getMostfrequentClient();
     }
 
+    public void updateNameById(int id, String name) {
+        Cliente modified_cliente = clienteRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        modified_cliente.setNombre(name);
+
+        clienteRepository.save(modified_cliente);
+    }
+
 }

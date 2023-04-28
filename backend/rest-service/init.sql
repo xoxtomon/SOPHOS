@@ -24,12 +24,12 @@ CREATE TABLE IF NOT EXISTS alquiler (
     fecha_alquiler TIMESTAMP,
     fecha_devolucion TIMESTAMP,
     FOREIGN KEY (cliente_id) REFERENCES cliente (id),
-    FOREIGN KEY (juego_id) REFERENCES juego (id)
+    FOREIGN KEY (juego_id) REFERENCES juego (id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS precio (
     id INTEGER PRIMARY KEY NOT NULL,
     juego_id INTEGER,
     precio NUMERIC(10,2),
-    FOREIGN KEY (juego_id) REFERENCES juego (id)
+    FOREIGN KEY (juego_id) REFERENCES juego (id) ON DELETE CASCADE
 );

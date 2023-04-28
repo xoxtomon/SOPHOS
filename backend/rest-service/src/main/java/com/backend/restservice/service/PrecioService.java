@@ -2,6 +2,7 @@ package com.backend.restservice.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,20 @@ public class PrecioService {
 
     public Integer getSalesByDate(Date date) {
         return precioRepository.getSalesByDate(date);
+    }
+
+    public void updatePriceById(int id, int new_price) {
+        Precio modified_price = precioRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        modified_price.setPrecio(new_price);
+
+        precioRepository.save(modified_price);
+    }
+
+    public Optional<Precio> getPriceById(int id) {
+        return precioRepository.findById(id);
+    }
+
+    public void deleteById(int id) {
+        precioRepository.deleteById(id);
     }
 }

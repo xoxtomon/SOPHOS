@@ -41,4 +41,15 @@ public class JuegoService {
     public Juego getMostRentedGame() {
         return juegoRepository.getMostRentedGame();
     }
+
+    public void updateNameById(int id, String new_name) {
+        Juego modified_Juego = juegoRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        modified_Juego.setNombre(new_name);
+
+        juegoRepository.save(modified_Juego);
+    }
+
+    public void deleteJuegoById(int id) {
+        juegoRepository.deleteById(id);
+    }
 }

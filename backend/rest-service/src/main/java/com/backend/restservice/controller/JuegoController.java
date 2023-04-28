@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -63,5 +64,24 @@ public class JuegoController {
     private ResponseEntity<Juego> getMostRentedGame() {
         return ResponseEntity.ok(juegoService.getMostRentedGame());
     }
+
+    @PutMapping(value = "/{id}/{new_name}")
+    private HttpStatus updateNameById(@PathVariable("id") int id, @PathVariable("new_name") String new_name) {
+        try {
+            juegoService.updateNameById(id, new_name);
+            return HttpStatus.OK;
+        } catch (Exception e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+    }
+
+    /*
+     * @DeleteMapping("/delete/{id}")
+     * private ResponseEntity<HttpStatus> deleteJuegoById(@PathVariable("id") int
+     * id) {
+     * juegoService.deleteJuegoById(id);
+     * return ResponseEntity.status(HttpStatus.OK).build();
+     * }
+     */
 
 }

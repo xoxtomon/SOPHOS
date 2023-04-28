@@ -50,4 +50,14 @@ public class ClienteController {
     private ResponseEntity<Cliente> getMostfrequentClient() {
         return ResponseEntity.ok(clienteService.getMostfrequentClient());
     }
+
+    @PutMapping(value = "/{id}/{new_name}")
+    private HttpStatus updateNameById(@PathVariable("id") int id, @PathVariable("new_name") String new_name) {
+        try {
+            clienteService.updateNameById(id, new_name);
+            return HttpStatus.OK;
+        } catch (Exception e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+    }
 }

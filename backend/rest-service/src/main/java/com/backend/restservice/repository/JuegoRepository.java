@@ -3,6 +3,7 @@ package com.backend.restservice.repository;
 import java.util.Date;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -24,5 +25,9 @@ public interface JuegoRepository extends JpaRepository<Juego, Integer> {
 
     @Query("SELECT j FROM Juego j JOIN Alquiler a ON j.id = a.juego_id GROUP BY j.id ORDER BY COUNT(*) DESC LIMIT 1")
     Juego getMostRentedGame();
+
+    @Modifying
+    @Query("DELETE FROM Juego j WHERE j.id = ?1")
+    void deleteJuegoById(int id);
 
 }
