@@ -2,6 +2,7 @@ package com.backend.restservice.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,5 +52,9 @@ public class JuegoService {
 
     public void deleteJuegoById(int id) {
         juegoRepository.deleteById(id);
+    }
+
+    public Optional<Juego> getJuegoById(int id) {
+        return juegoRepository.findById(id);
     }
 }

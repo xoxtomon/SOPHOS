@@ -3,6 +3,7 @@ package com.backend.restservice.controller;
 import java.net.URI;
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,6 +39,11 @@ public class JuegoController {
     @GetMapping
     private ResponseEntity<List<Juego>> getAllJuego() {
         return ResponseEntity.ok(juegoService.getAllJuegos());
+    }
+
+    @GetMapping(value = "/{id}")
+    private ResponseEntity<Optional<Juego>> getJuegoById(@PathVariable("id") int id) {
+        return ResponseEntity.ok(juegoService.getJuegoById(id));
     }
 
     @GetMapping("/director/{name}")
