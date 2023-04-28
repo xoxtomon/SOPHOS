@@ -3,54 +3,32 @@ import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
 
 export default function CustomCard(props) {
+    const { cardType, id, nombre, apellido, email, telefono, direccion, director, protagonista, productor, plataforma, fechaLanzamiento, cliente_id, juego_id, fecha_alquiler, fecha_devolucion, precio } = props;
     let card;
-    if (props.cardType == 0) {
+
+    if (cardType == 0) {
         card = (<Typography variant="body2" color="textSecondary" component="p">
-            Nombre: {props.nombre}
-            <br />
-            Apellido: {props.apellido}
-            <br />
-            Email: {props.email}
-            <br />
-            Telefono: {props.telefono}
-            <br />
-            Direccion: {props.direccion}
+            Nombre: {nombre} <br /> Apellido: {apellido} <br /> Email: {email} <br /> Telefono: {telefono} <br /> Direccion: {direccion}
         </Typography>);
-    } else if (props.cardType == 1) {
+    } else if (cardType == 1) {
         card = (
             <Typography variant="body2" color="textSecondary" component="p">
                 <Typography variant="h5" color="textPrimary">
-                    {props.nombre}
+                    {nombre}
                 </Typography>
-                Director: {props.director}
-                <br />
-                Protagonista: {props.protagonista}
-                <br />
-                Productor: {props.productor}
-                <br />
-                Plataforma: {props.plataforma}
-                <br />
-                Lanzamiento: {props.fechaLanzamiento}
+                Director: {director} <br /> Protagonista: {protagonista} <br /> Productor: {productor} <br /> Plataforma: {plataforma} <br /> Lanzamiento: {fechaLanzamiento}
             </Typography>
         );
-    } else if (props.cardType == 2) {
+    } else if (cardType == 2) {
         card = (
             <Typography variant="body2" color="textSecondary" component="p">
-                ID Cliente: {props.cliente_id}
-                <br />
-                ID Juego: {props.juego_id}
-                <br />
-                Fecha Alquiler: {props.fecha_alquiler}
-                <br />
-                Fecha Devolucion: {props.fecha_devolucion}
+                ID Cliente: {cliente_id} <br /> ID Juego: {juego_id} <br /> Fecha Alquiler: {fecha_alquiler} <br /> Fecha Devolucion: {fecha_devolucion}
             </Typography>
         );
-    } else if (props.cardType == 3) {
+    } else if (cardType == 3) {
         card = (
             <Typography variant="body2" color="textSecondary" component="p">
-                Id Juego: {props.juego_id}
-                <br />
-                Precio: {props.precio}
+                Id Juego: {juego_id} <br /> Precio: {precio}
             </Typography>
         );
     }
@@ -59,7 +37,7 @@ export default function CustomCard(props) {
         <Card>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                    ID: {props.id}
+                    ID: {id}
                 </Typography>
                 {card}
             </CardContent>
