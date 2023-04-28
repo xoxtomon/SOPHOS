@@ -1,4 +1,4 @@
-import { Box, TextField, FormControlLabel, Button, Checkbox } from "@mui/material";
+import { Box, TextField, Button } from "@mui/material";
 import React, { useState } from "react";
 
 export default function Add(props) {
@@ -14,6 +14,37 @@ export default function Add(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        let parsedFormData;
+        if (tabOption === 0) {
+            parsedFormData = formData;
+        };
+        if (tabOption === 1) {
+            const tmp_date = new Date(formData.lanzamiento);
+            tmp_date.setDate(tmp_date.getDate() + 1);
+            parsedFormData = {
+                ...formData,
+                fecha_lanzamiento: tmp_date,
+            };
+        };
+        if (tabOption === 2) {
+            const tmp_date = new Date(formData.fecha_alquiler);
+            tmp_date.setDate(tmp_date.getDate() + 1);
+            parsedFormData = {
+                ...formData,
+                cliente_id: parseInt(formData.id_cliente),
+                juego_id: parseInt(formData.id_juego),
+                fecha_alquiler: tmp_date.toISOString(),
+            };
+            console.log(parsedFormData);
+        };
+        if (tabOption === 3) {
+            parsedFormData = {
+                ...formData,
+                precio: parseInt(formData.precio),
+                juego_id: parseInt(formData.id_juego)
+            };
+            console.log(parsedFormData);
+        };
         const apiUrl = endpoints[tabOption];
         fetch(apiUrl, {
             headers: {
@@ -21,7 +52,7 @@ export default function Add(props) {
                 "Accept": "application/json",
             },
             method: "POST",
-            body: JSON.stringify(formData),
+            body: JSON.stringify(parsedFormData),
         })
             .then((response) => {
                 if (!response.ok) {
