@@ -103,10 +103,11 @@ Juego "1"  -->  "1" Precio
 This are the first scketches of the UI interface to be implemented on the FrontEnd app.
 Landing Page, Tab, Cards, and Fab:
 ![Landing, Tab w/ options, and Cards](https://imgur.com/1oypKNr.png)
-
+<br>
 ![Fab button added](https://imgur.com/Z4n1Axu.png)
-
+<br>
 Modal on action and Card Zoom:
+<br>
 ![Modal, and Card on zoom](https://imgur.com/w5yxovG.png)
 
 ## Meta
