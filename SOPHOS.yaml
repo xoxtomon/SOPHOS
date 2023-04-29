@@ -1,0 +1,474 @@
+openapi: 3.0.0
+info:
+  title: SOPHOS
+  version: 1.0.0
+servers:
+  - url: localhost://
+tags:
+  - name: CLIENTE
+  - name: ALQUILER
+  - name: JUEGOS
+  - name: PRECIO
+paths:
+  /080/api/v1/cliente/add:
+    post:
+      tags:
+        - CLIENTE
+      summary: Add Cliente
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nombre: Isabella
+                apellido: Rodriguez
+                telefono: '3015554321'
+                email: isabella@email.com
+                direccion: direccion Isabella
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/cliente:
+    get:
+      tags:
+        - CLIENTE
+      summary: Get all Clientes
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/cliente/{id}:
+    get:
+      tags:
+        - CLIENTE
+      summary: Get Cliente By ID
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/cliente/delete/{id}:
+    delete:
+      tags:
+        - CLIENTE
+      summary: Delete by ID
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '202'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/cliente/frequentClient:
+    get:
+      tags:
+        - CLIENTE
+      summary: Get Cliente Frequente
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/cliente/{id}/{nombre}:
+    put:
+      tags:
+        - CLIENTE
+      summary: Edit Nombre by ID
+      requestBody:
+        content: {}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+        - name: nombre
+          in: path
+          schema:
+            type: string
+          required: true
+          example: Paul
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/alquiler/add:
+    post:
+      tags:
+        - ALQUILER
+      summary: Add Alquiler
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                cliente_id: 105
+                juego_id: 7
+                fecha_alquiler: '2023-04-19T20:00:00.000'
+                fecha_devolucion: null
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/alquiler:
+    get:
+      tags:
+        - ALQUILER
+      summary: Get all Alquileres
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/alquiler/{id}:
+    get:
+      tags:
+        - ALQUILER
+      summary: Get Alquiler by Id
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '254'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/alquiler/delete/{id}:
+    delete:
+      tags:
+        - ALQUILER
+      summary: Get Alquiler by Id Copy
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '254'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/alquiler/{id}/{new_fecha}:
+    put:
+      tags:
+        - ALQUILER
+      summary: Edit fecha devolucion by ID
+      requestBody:
+        content: {}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '252'
+        - name: new_fecha
+          in: path
+          schema:
+            type: string
+          required: true
+          example: '2023-04-11T00:00:00.000'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/juego:
+    get:
+      tags:
+        - JUEGOS
+      summary: GET all Juegos
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/juego/mostRentedGame:
+    get:
+      tags:
+        - JUEGOS
+      summary: GET Most Rented Game
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/juego/add:
+    post:
+      tags:
+        - JUEGOS
+      summary: Add Juego
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nombre: Assassin's Creed Valhalla
+                director: Ashraf Ismail
+                protagonista: Eivor
+                productor: Ubisoft
+                plataforma: Multi
+                fecha_lanzamiento: '2020-11-10T00:00:00.000'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/juego/director/{name}:
+    get:
+      tags:
+        - JUEGOS
+      summary: Get Juego By Director
+      parameters:
+        - name: name
+          in: path
+          schema:
+            type: string
+          required: true
+          example: Leslie Benzies
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/juego/delete/{id}:
+    delete:
+      tags:
+        - JUEGOS
+      summary: Delete Juego By Id
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '7'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/juego/protagonista/{name}:
+    get:
+      tags:
+        - JUEGOS
+      summary: Get Juego By Protagonista
+      parameters:
+        - name: name
+          in: path
+          schema:
+            type: string
+          required: true
+          example: Trevor Philips
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/juego/productor/{name}:
+    get:
+      tags:
+        - JUEGOS
+      summary: Get Juego By Productor
+      parameters:
+        - name: name
+          in: path
+          schema:
+            type: string
+          required: true
+          example: Rockstar
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/juego/lanzamiento/{date}:
+    get:
+      tags:
+        - JUEGOS
+      summary: Get Juego By Fecha de Lazamiento
+      parameters:
+        - name: date
+          in: path
+          schema:
+            type: string
+          required: true
+          example: '2013-09-16'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/juego/{id}/{new_name}:
+    put:
+      tags:
+        - JUEGOS
+      summary: Edit Name by Id
+      requestBody:
+        content: {}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+        - name: new_name
+          in: path
+          schema:
+            type: string
+          required: true
+          example: GTA V
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/juego/{id}:
+    get:
+      tags:
+        - JUEGOS
+      summary: Get Juego By ID
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/precio/add:
+    post:
+      tags:
+        - PRECIO
+      summary: Add Precio
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                juego_id: 3
+                precio: 75000
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/precio:
+    get:
+      tags:
+        - PRECIO
+      summary: Get All Precios
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/precio/{id}:
+    get:
+      tags:
+        - PRECIO
+      summary: Get Precio  By ID
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/precio/delete/{id}:
+    delete:
+      tags:
+        - PRECIO
+      summary: Delete Precio  By ID
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '54'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/precio/sales/{date}:
+    get:
+      tags:
+        - PRECIO
+      summary: Get all sales by Date
+      parameters:
+        - name: date
+          in: path
+          schema:
+            type: string
+          required: true
+          example: '2023-04-11'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /080/api/v1/precio/{id}/{new_price}:
+    put:
+      tags:
+        - PRECIO
+      summary: Edit Price By ID
+      requestBody:
+        content: {}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '53'
+        - name: new_price
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '90000'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

@@ -1,0 +1,772 @@
+{
+	"info": {
+		"_postman_id": "e35d5630-84c8-49d3-9be9-eb89c9342f54",
+		"name": "SOPHOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24145485"
+	},
+	"item": [
+		{
+			"name": "CLIENTE",
+			"item": [
+				{
+					"name": "Add Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Isabella\",\r\n    \"apellido\": \"Rodriguez\",\r\n    \"telefono\": \"3015554321\",\r\n    \"email\": \"isabella@email.com\",\r\n    \"direccion\": \"direccion Isabella\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/cliente/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cliente",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cliente By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/cliente/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cliente",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/cliente/delete/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cliente",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "202"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cliente Frequente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/cliente/frequentClient",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cliente",
+								"frequentClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Nombre by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/cliente/:id/:nombre",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cliente",
+								":id",
+								":nombre"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "nombre",
+									"value": "Paul"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ALQUILER",
+			"item": [
+				{
+					"name": "Add Alquiler",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente_id\": 105,\r\n    \"juego_id\": 7,\r\n    \"fecha_alquiler\": \"2023-04-19T20:00:00.000\",\r\n    \"fecha_devolucion\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/alquiler/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"alquiler",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Alquileres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/alquiler",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"alquiler"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Alquiler by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/alquiler/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"alquiler",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "254"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Alquiler by Id Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/alquiler/delete/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"alquiler",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "254"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit fecha devolucion by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/alquiler/:id/:new_fecha",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"alquiler",
+								":id",
+								":new_fecha"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "252"
+								},
+								{
+									"key": "new_fecha",
+									"value": "2023-04-11T00:00:00.000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JUEGOS",
+			"item": [
+				{
+					"name": "GET all Juegos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/juego",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"juego"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Most Rented Game",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/juego/mostRentedGame",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"juego",
+								"mostRentedGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Juego",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Assassin's Creed Valhalla\",\r\n    \"director\":\"Ashraf Ismail\",\r\n    \"protagonista\":\"Eivor\",\r\n    \"productor\":\"Ubisoft\",\r\n    \"plataforma\":\"Multi\",\r\n    \"fecha_lanzamiento\":\"2020-11-10T00:00:00.000\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/juego/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"juego",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Juego By Director",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/juego/director/:name",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"juego",
+								"director",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "Leslie Benzies"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Juego By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/juego/delete/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"juego",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Juego By Protagonista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/juego/protagonista/:name",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"juego",
+								"protagonista",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "Trevor Philips"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Juego By Productor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/juego/productor/:name",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"juego",
+								"productor",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "Rockstar"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Juego By Fecha de Lazamiento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/juego/lanzamiento/:date",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"juego",
+								"lanzamiento",
+								":date"
+							],
+							"variable": [
+								{
+									"key": "date",
+									"value": "2013-09-16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Name by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/juego/:id/:new_name",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"juego",
+								":id",
+								":new_name"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "new_name",
+									"value": "GTA V"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Juego By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/juego/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"juego",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRECIO",
+			"item": [
+				{
+					"name": "Add Precio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"juego_id\": 3,\r\n    \"precio\": 75000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/precio/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"precio",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Precios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"juego_id\": 1,\r\n    \"precio\": 50000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/precio",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"precio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Precio  By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/precio/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"precio",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Precio  By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/precio/delete/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"precio",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "54"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all sales by Date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/precio/sales/:date",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"precio",
+								"sales",
+								":date"
+							],
+							"variable": [
+								{
+									"key": "date",
+									"value": "2023-04-11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Price By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/precio/:id/:new_price",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"precio",
+								":id",
+								":new_price"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "53"
+								},
+								{
+									"key": "new_price",
+									"value": "90000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
