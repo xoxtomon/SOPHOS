@@ -11,6 +11,7 @@ export default function CustomCard(props) {
             Nombre: {nombre} <br /> Apellido: {apellido} <br /> Email: {email} <br /> Telefono: {telefono} <br /> Direccion: {direccion}
         </Typography>);
     } else if (cardType == 1) {
+        console.log(props);
         card = (
             <Typography variant="body2" color="textSecondary" component="p">
                 <Typography variant="h5" color="textPrimary">
