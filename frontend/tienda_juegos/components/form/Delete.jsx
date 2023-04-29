@@ -35,6 +35,9 @@ export default function Delete(props) {
                 console.error("Error: ", error);
                 // handle errors here
             });
+
+        // Go Back to Main
+        location.reload();
     }
 
     return (

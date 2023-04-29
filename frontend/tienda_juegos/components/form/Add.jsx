@@ -1,7 +1,9 @@
 import { Box, TextField, Button } from "@mui/material";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Add(props) {
+    const router = useRouter();
     const endpoints = {
         0: 'http://localhost:8080/api/v1/cliente/add',
         1: 'http://localhost:8080/api/v1/juego/add',
@@ -68,6 +70,9 @@ export default function Add(props) {
                 console.error("Error: ", error);
                 // handle errors here
             });
+
+        // Go Back to Main
+        location.reload();
     };
 
     const handleInputChange = (event) => {

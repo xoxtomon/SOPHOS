@@ -37,7 +37,9 @@ export default function Edit(props) {
                 console.error("Error: ", error);
                 // handle errors here
             });
-        //console.log(id + fecha_alquiler + precio + nombre);
+
+        // Go Back to Main
+        location.reload();
     }
 
     let form;
